@@ -46,9 +46,12 @@ def get_list_of_ingredients(dishes, person_count, cook_book):
     for dish in listics:
         for ingr in cook_book[dish]:
             if ingr['ingredient_name'] in ingred:
-                ingred.update({ingr['ingredient_name']: {'measure': ingr['measure'], 'quantity': count * int(ingr['quantity']) + int(ingred[ingr['ingredient_name']]['quantity'])}})
+                ingred.update({ingr['ingredient_name']: {'measure': ingr['measure'],
+                                                         'quantity': count * int(ingr['quantity']) + int(
+                                                             ingred[ingr['ingredient_name']]['quantity'])}})
             else:
-                ingred[ingr['ingredient_name']] = {'measure': ingr['measure'], 'quantity': count * int(ingr['quantity'])}
+                ingred[ingr['ingredient_name']] = {'measure': ingr['measure'],
+                                                   'quantity': count * int(ingr['quantity'])}
     return ingred
 
 
@@ -72,7 +75,6 @@ with open('recipes.txt', encoding='utf-8') as f:
     list_of_ingredients = get_list_of_ingredients(['Фахитос', 'Омлет'], 2, cook_book)
     print('List of ingredients:')
     print(list_of_ingredients)
-
 
 # Task 3
 print('Task 3')
